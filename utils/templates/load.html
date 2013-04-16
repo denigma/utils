@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head_title %}Contact{% endblock %}
+{% block title %}Contact{% endblock %}
+
+{% block extra_style %}
+    <style>
+        .p { font-family: 'Courier', sans-serif; }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <pre>{{ file|safe }}</pre>
+{% endblock %}
+
