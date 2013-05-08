@@ -21,7 +21,7 @@ class LoadView(TemplateView):
 
 
 class LoadDocs(TemplateView):
-    """Loads a README and documentation and passes it to the template.
+    """Loads a file and passes it to the template.
 
     To use it overwrite and file_name attribute that specifies the
     location of the file to load.
@@ -32,7 +32,7 @@ class LoadDocs(TemplateView):
 
     def dispatch(self, request, *args, **kwargs):
         if 'name' in kwargs:
-            self.file_name = kwargs['name']
+            self.file_name = kwargs['name'] or self.file_name
         print self.file_name
         return super(LoadDocs, self).dispatch(request, *args, **kwargs)
 
@@ -49,6 +49,6 @@ class LoadDocs(TemplateView):
 
 
 class DocsView(LoadDocs):
-    template_name='about.html'
+    template_name='docs.html'
     file_name = 'README.rst'
     path_name = 'docs'
