@@ -15,6 +15,7 @@ def active(request, urls):
 def location(request):
     if request.path == '/':
         return ' » %s' % 'Home'
-    return ' » %s' % request.path[1:-1].replace('/', ' » ').title()
+    return ' » %s' % request.path[1:-1].replace('/', ' » ').title() + \
+           request.path[-1].replace('/', '') #-1
 
 #234567891123456789212345678931234567894123456789512345678961234567897123456789

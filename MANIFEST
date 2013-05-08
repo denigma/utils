@@ -5,4 +5,5 @@ utils/__init__.py
 utils/admin.py
 utils/models.py
 utils/tests.py
+utils/urls.py
 utils/views.py
